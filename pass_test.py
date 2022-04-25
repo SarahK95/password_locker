@@ -92,12 +92,13 @@ def setUp(self):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_credential = Credentials("Kammy", "233HR60") 
+        self.new_credential = Credentials("Yahoo", "Kammy", "233HR60") 
         
 def test_init(self):
     '''
         test_init test case to test if the new credential instance has initialized properly
     '''
+    self.assertEqual(self.new_credential.account,"Yahoo")
     self.assertEqual(self.new_credential.username,"Kammy")
     self.assertEqual(self.new_credential.password,"233HR60")
         
