@@ -62,8 +62,6 @@ def test_save_multiple_user(self):
     self.new_user.save_user()
     test_user = User("username", "password", "test@gmail.com")
     test_user.save_user()
-    
-    self.new_user.delete_user()
     self.assertEqual(len(User.user_list),2)
     
          
@@ -115,7 +113,21 @@ def test_save_credential(self):
          the credential list
         '''
         self.new_credential.save_credential() # saving the new contact
-        self.assertEqual(len(Credentials.credential_list),1)  
+        self.assertEqual(len(Credentials.credential_list),1) 
+        
+        
+def test_save_multiple_credential(self):
+    '''
+            test_save_multiple_credential to check if we can save multiple user
+            objects to our credential_list
+    '''
+    self.new_credential.save_credential()
+    test_credential = Credentials("username", "password", "Instagram")
+    test_credential.save_credential()
+    self.assertEqual(len(User.user_list),2)
+            
+        
+         
             
         
         
