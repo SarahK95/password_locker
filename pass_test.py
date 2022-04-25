@@ -94,6 +94,12 @@ def setUp(self):
         '''
         self.new_credential = Credentials("Yahoo", "Kammy", "233HR60") 
         
+def tearDown(self):
+        '''
+        method that does clean up after each test case has run.
+        '''
+        Credentials.credentials_list = []        
+        
 def test_init(self):
     '''
         test_init test case to test if the new credential instance has initialized properly
