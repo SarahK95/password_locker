@@ -80,13 +80,7 @@ def test_delete_user(self):
     self.new_user.delete_user()
     self.assertEqual(len(User.user_list),1)
     
-   
-    
-         
-     
-     
-     
-    
+      
             
         
 class TestCredentials(unittest.TestCase):
@@ -94,6 +88,23 @@ class TestCredentials(unittest.TestCase):
     Test class that defines test cases for the credential class behaviours.
 
     '''
+def setUp(self):
+        '''
+        Set up method to run before each test cases.
+        '''
+        self.new_credential = Credentials("Kammy", "233HR60") 
+        
+def test_init(self):
+    '''
+        test_init test case to test if the new credential instance has initialized properly
+    '''
+    self.assertEqual(self.new_credential.username,"Kammy")
+    self.assertEqual(self.new_credential.password,"233HR60")
+        
+        
+    
+               
+    
                
 
 

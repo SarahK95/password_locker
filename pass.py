@@ -27,10 +27,6 @@ def find_user_by_username(cls, username):
         if user.username == username:
             return user
         
-        
-
-            
-
 
 def delete_user(self):
     '''
