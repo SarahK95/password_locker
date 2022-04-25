@@ -1,4 +1,7 @@
 import pyperclip
+import random
+import string
+
 class User:
      """
     Class that generates new instances of users
@@ -99,7 +102,13 @@ def password_exist(cls,password):
                 return True
 
         else:
-            return False                
+            return False   
+        
+        
+  @classmethod
+    def copy_email(cls,account):
+        credential_found = Credentials.find_by_account_type(account)
+        pyperclip.copy(credential_found.password)                     
     
 
     
