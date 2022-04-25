@@ -78,6 +78,15 @@ def test_delete_user(self):
     self.new_user.delete_user()
     self.assertEqual(len(User.user_list),1)
     
+    
+def test_display_all_user(self):
+         """
+         returns a list of all users saved.
+         """
+         
+         self.assertEqual(User.display_user(),
+                          User.user_list)    
+    
       
             
         
