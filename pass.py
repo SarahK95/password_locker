@@ -4,12 +4,13 @@ class User:
     """
 user_list = [] # Empty contact list store detail of user
 
-def __init__(self, username, password):
+def __init__(self, username, password, email):
 
     
 
     self.username = username
     self.password = password
+    self.email = email
     
 def save_user(self):
     
@@ -25,4 +26,11 @@ def find_user_by_username(cls, username):
     for user in cls.user_list:
         if user.username == username:
             return user
-        
+
+
+def delete_user(self):
+    '''
+        delete_user method deletes a saved user from the user_list
+        '''
+    User.user_list.remove(self)
+            

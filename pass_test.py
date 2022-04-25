@@ -24,6 +24,7 @@ def test_init(self):
 
         self.assertEqual(self.new_user.username,"SarahK")
         self.assertEqual(self.new_user.password,"233HR35")
+        self.assertEqual(self.new_user.email,"sarak@gmail.com")
       
 def test_save_user(self):
         '''
@@ -40,10 +41,14 @@ def test_find_user_by_username(self):
     '''
     
      self.new_user.save_user()
-     test_user = User("username", "password")
+     test_user = User("username", "password", "test@gmail.com")
      test_user.save_user()
      
      found_user = User.find_by_username("username")
+     self.assertEqual(found_user.email, test_user.email)
+     
+     
+     
     
             
         
