@@ -82,9 +82,25 @@ def display_all_credential(cls):
     '''
     method that returns the all users in user list
     '''
-    return cls.credential_list                    
-            
+    return cls.credential_list    
+
+@classmethod
+def password_exist(cls,password):
+    '''
+    Method that checks if a user exists from the user list.
+    Args:
+        username: user name to search if it exists
+    Returns :
+        Boolean: True or false depending if the contact exists
+    '''
+    for user in cls.credential_list:
+        if user.password == password:
+                return True
+
+        else:
+            return False                
     
+
     
     
     
