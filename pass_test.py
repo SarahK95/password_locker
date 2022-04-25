@@ -48,6 +48,22 @@ def test_find_user_by_username(self):
      self.assertEqual(found_user.email, test_user.email)
      
      
+def test_delete_user(self):
+    '''
+    test_delete_user to test if we can remove a user from our user list
+    '''
+    self.new_user.save_user()
+    test_user = User("username", "password", "test@gmail.com")
+    test_user.save_user()
+    
+    self.new_user.delete_user()
+    self.assertEqual(len(User.user_list),1)
+    
+   
+    
+         
+     
+     
      
     
             
