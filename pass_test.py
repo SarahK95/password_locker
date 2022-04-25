@@ -31,7 +31,21 @@ def test_save_user(self):
          the user list
         '''
         self.new_user.save_user() # saving the new contact
-        self.assertEqual(len(User.user_list),1)   
+        self.assertEqual(len(User.user_list),1)  
+        
+        
+def test_find_user_by_username(self):
+     '''
+        test to check if we can find a user by user name and display it
+    '''
+    
+     self.new_user.save_user()
+     test_user = User("username", "password")
+     test_user.save_user()
+     
+     found_user = User.find_by_username("username")
+    
+            
         
 class TestCredentials(unittest.TestCase):
     '''
