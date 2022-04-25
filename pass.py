@@ -49,6 +49,18 @@ def _init_(self, account, username, password):
     self.password = password
     
     
+def save_credential(self):
+    
+        '''
+        save_credential method saves credential objects into credential_list
+        '''
+        Credentials.credential_list.append(self)
+            
+    
+    
+    
+    
+    
 
     
     
