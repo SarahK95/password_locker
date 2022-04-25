@@ -60,7 +60,15 @@ def delete_credential(self):
     '''
         delete_credential method deletes a saved credential from the credential_list
         '''
-    Credentials.credential_list.remove(self)        
+    Credentials.credential_list.remove(self)    
+    
+@classmethod
+def find_credential_by_account_type(cls, account):
+    
+    for credential in cls.credential_list:
+        if credential.account == account:
+            return account
+                
             
     
     
