@@ -76,6 +76,13 @@ def find_credential_by_account_type(cls, account):
         if credential.account == account:
             return account
                 
+                
+@classmethod
+def display_all_credential(cls):
+    '''
+    method that returns the all users in user list
+    '''
+    return cls.credential_list                    
             
     
     
