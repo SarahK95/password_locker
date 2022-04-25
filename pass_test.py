@@ -137,7 +137,22 @@ def test_delete_credential(self):
     test_credential.save_credential()
     
     self.new_credential.delete_credential()
-    self.assertEqual(len(Credentials.credential_list),1)            
+    self.assertEqual(len(Credentials.credential_list),1)     
+    
+
+def test_find_credential_by_account_type(self):
+    '''
+        test to check if we can find a credential by account type and display it
+    '''
+    
+    self.new_credential.save_credential()
+    test_credential = Credentials("username", "password", "Instagram")
+    test_credential.save_credential()
+    
+    found_credential = Credentials.find_by_account("account")
+    self.assertEqual(found_credential.account, test_credential.account)
+     
+             
         
          
             

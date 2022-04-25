@@ -34,6 +34,13 @@ def delete_user(self):
         '''
     User.user_list.remove(self)
     
+@classmethod
+def display_all_users(cls):
+    '''
+    method that returns the all users in user list
+    '''
+    return cls.user_list    
+
     
 class Credentials:
     
