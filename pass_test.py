@@ -101,6 +101,16 @@ def test_init(self):
     self.assertEqual(self.new_credential.account,"Yahoo")
     self.assertEqual(self.new_credential.username,"Kammy")
     self.assertEqual(self.new_credential.password,"233HR60")
+    
+    
+def test_save_credential(self):
+        '''
+        test_save_credential test case to test if the credential object is saved into
+         the credential list
+        '''
+        self.new_credential.save_credential() # saving the new contact
+        self.assertEqual(len(Credentials.credential_list),1)  
+            
         
         
     
