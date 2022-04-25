@@ -125,7 +125,19 @@ def test_save_multiple_credential(self):
     test_credential = Credentials("username", "password", "Instagram")
     test_credential.save_credential()
     self.assertEqual(len(User.user_list),2)
-            
+    
+    
+    
+def test_delete_credential(self):
+    '''
+    test_delete_credential to test if we can remove a user from our credentail list
+    '''
+    self.new_credential.save_credential()
+    test_credential = Credentials("username", "password", "Instagram")
+    test_credential.save_credential()
+    
+    self.new_credential.delete_credential()
+    self.assertEqual(len(Credentials.credential_list),1)            
         
          
             
