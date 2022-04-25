@@ -160,6 +160,15 @@ def test_find_credential_by_account_type(self):
     
     found_credential = Credentials.find_by_account("account")
     self.assertEqual(found_credential.account, test_credential.account)
+    
+    
+def test_display_all_credential(self):
+         """
+         returns a list of all password saved.
+         """
+         
+         self.assertEqual(Credentials.display_credential(),
+                          Credentials.credential_list)    
      
              
         
