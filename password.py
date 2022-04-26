@@ -8,7 +8,7 @@ class User:
     """
 user_list = [] # Empty contact list store detail of user
 
-def __init__(self, username, password, email):
+def __init__(self, username, password,email ):
 
     
 
@@ -111,13 +111,10 @@ def copy_password(cls,account):
     pyperclip.copy(credential_found.password)    
     
     
-def generate_password(self, size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
-            """
-            function that generates random passwords
-            """
-
-            generate_password = ''.join(random.choice(char)for _ in range(size))
-            return generate_password                    
+def generate_password(stringLength=8):
+        """Generate a random password string of letters and digits and special characters"""
+        password = string.ascii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
+        return ''.join(random.choice(password) for i in range(stringLength))                 
     
 
     

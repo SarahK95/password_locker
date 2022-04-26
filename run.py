@@ -78,32 +78,33 @@ def generate_password():
     '''
     generates a random password for the user.
     '''
-    auto_password=Credentials.generatepassword()
-    return auto_password
+    password=Credentials.generate_password()
+    return password
 
 def main():
-    print("Hello Welcome! To proceed create new account. Use short code ca to create ne acc with username and password")
+    print("Hello Welcome! To proceed create new account.\n use ca -- to create new acc with username and password")
     short_code = input().lower()
     if short_code == 'ca':
         print("New User")
         print("_"*20)
-        user_username = input()
+        username = input()
         
     while True:
-        print("use short code ip to Input Password:\n gp- generate password") 
+        print("use short code\n ip to Input Password: \n gp to generate password") 
         password_option = input().lower()
         if password_option == 'ip':
             password = input("Enter Password\n")
             break
         elif password_option == 'gp':
-            password = generate_password()  
+            password = generate_password()
+             
             break
         else:
             print("invalid password,try again")
             
     save_user(create_user(username, password))
     print("_"*100)
-    print(f"Hello {username}, Your account has succesfully been created! Your password:{password}")
+    print(f"Hello {username}, Your account has succesfully been created!Your password is {password}")
     print("_"*100)
     
     
@@ -182,8 +183,9 @@ def main():
         else:
             print("I really didn't get that. Please use the short codes")
 if __name__ == '__main__':
-
     main()
+
+
             
                     
                     
