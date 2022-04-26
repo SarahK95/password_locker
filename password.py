@@ -105,10 +105,10 @@ def password_exist(cls,password):
             return False   
         
         
-  @classmethod
-    def copy_email(cls,account):
-        credential_found = Credentials.find_by_account_type(account)
-        pyperclip.copy(credential_found.password)                     
+@classmethod
+def copy_password(cls,account):
+    credential_found = Credentials.find_by_account_type(account)
+    pyperclip.copy(credential_found.password)                     
     
 
     

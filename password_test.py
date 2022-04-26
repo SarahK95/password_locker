@@ -1,5 +1,5 @@
 import unittest
-from pass import User, Credentials
+from password import User, Credentials
 
 import pyperclip
 
