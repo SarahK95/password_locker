@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.8
 from traceback import print_last
-from password import User, Credentials, find_credential_by_account_type
+from password import User, Credentials
 
 def create_user(username, password):
     '''
@@ -45,7 +45,7 @@ def save_credential(credential):
      """
     Function to save Credentials to the credentials list
     """
-     credential.save_credential() 
+     credential.save_credential(credential) 
      
 def delete_credential(credential):
     """
@@ -109,7 +109,7 @@ def main():
     
     
     while True:
-        print("Use these short codes : cc - create a new credential, del- delete credential, dc - display credential, fc -find a credential, ex -exit the credential list ")
+        print("Use these short codes : cc - create a new credential,\n del- delete credential,\n dc - display credential,\n fc -find a credential,\n ex -exit the credential list ")
         
         short_code = input().lower()
         
@@ -136,10 +136,11 @@ def main():
                     
             save_credential(create_credential(account, username,password))
             print('\n')
-            print(f"Account:{account} \n ,Username:{username}\n ,Password:{password} created succesfully!" )
+            print(f"Account:{account} \n Username:{username}\n Password:{password} created succesfully!" )
             print('\n')
             
         elif short_code == 'dc':
+            
             if display_credential():
                 print("Here are your credentials")
                 print("_"*50)
@@ -181,7 +182,9 @@ def main():
             print("Bye .......")
             break
         else:
+            
             print("I really didn't get that. Please use the short codes")
+            
 if __name__ == '__main__':
     main()
 
