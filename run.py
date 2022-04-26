@@ -14,5 +14,10 @@ def save_user(user):
     '''
      user.save_user()
     
+def delete_user(user):   
+    '''
+    Function to delete a contact
+    '''
+    user.delete_contact() 
     
     
