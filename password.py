@@ -108,7 +108,16 @@ def password_exist(cls,password):
 @classmethod
 def copy_password(cls,account):
     credential_found = Credentials.find_by_account_type(account)
-    pyperclip.copy(credential_found.password)                     
+    pyperclip.copy(credential_found.password)    
+    
+    
+def generate_password(self, size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
+            """
+            function that generates random passwords
+            """
+
+            generate_password = ''.join(random.choice(char)for _ in range(size))
+            return generate_password                    
     
 
     
