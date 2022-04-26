@@ -45,7 +45,7 @@ def save_credential(credential):
      """
     Function to save Credentials to the credentials list
     """
-     credential.save_credential(credential) 
+     credential.save_credential() 
      
 def delete_credential(credential):
     """
@@ -57,7 +57,7 @@ def display_credential():
     """
     Function to display existing credential
     """
-    return Credentials.display_credential()   
+    return Credentials.display_all_credential()   
 
 def credential_exists(password):
     """
@@ -69,7 +69,7 @@ def find_credential(account):
     """
     Function that finds a Credentials by an account name and returns the Credentials that belong to that account
     """
-    return Credentials.find_credential(account)
+    return Credentials.find_credential_by_account_type(account)
 
 def copy_password(account):
     return Credentials.copy_password(account)
@@ -141,14 +141,14 @@ def main():
             
         elif short_code == 'dc':
             
-            if display_credential():
-                print("Here are your credentials")
+            results= display_credential()
+            print("Here are your credentials")
+            print("_"*50)
+            for account in results:
+                print(f"Account:{account.account}\n ,Username:{account.username}\n ,Password:{account.password}")
                 print("_"*50)
-                for account in display_credential():
-                    print(f"Account:{account.account}\n ,Username:{username}\n ,Password:{password}")
-                    print("_"*50)
-            else:
-                print("No credentials saved...")        
+            
+                  
                 
                 
         elif short_code == 'fc':
@@ -166,17 +166,20 @@ def main():
                 
                 
         elif short_code == 'del':
-            print("Enter credential you want to delete")
-            search_username = input().lower()
-            if find_credential(search_username):
-                search_credential = find_credential(search_username)
-                print("_"*50)
-                search_credential.delete_credential()
+            print("Enter account you want to delete")
+            search_account = input().lower()
+            # delete_credential(find_credential(search_username))
+            if find_credential(search_account):
+                cred =find_credential(search_account)
+                delete_credential(cred)
+                
                 print("\n")
-                print(f"Your  credential is : {search_credential.account} successfully deleted!")
+                print(f"Your  account has been successfully deleted!")
                 print('\n')
             else:
-                print("That Credential you want to delete does not exist")
+                print("No account found")
+                
+              
                 
         elif short_code == 'ex':
             print("Bye .......")

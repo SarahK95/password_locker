@@ -75,12 +75,12 @@ class Credentials:
         self.password = password
         
         
-    def save_credential(self,account,username,password):
+    def save_credential(self):
         """
          save_credential method saves credential objects into credential_list
          """
             
-        Credentials.credential_list.append(self, account,username,password)
+        Credentials.credential_list.append(self)
             
     def delete_credential(self):
         """
@@ -94,7 +94,7 @@ class Credentials:
         
         for credential in cls.credential_list:
             if credential.account == account:
-                return account
+                return credential
                     
                     
     @classmethod
